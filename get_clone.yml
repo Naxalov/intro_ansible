@@ -1,0 +1,12 @@
+# Get clone from public repository with Ansible 
+---
+- hosts: all
+  become: true
+  
+  tasks:
+    - name: Get clone from public repository
+      git:
+        repo: https://github.com/Naxalov/grocery_store
+        dest: /home/real/Desktop/grocery_store
+        clone: yes
+        update: yes
