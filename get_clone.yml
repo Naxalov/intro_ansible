@@ -5,8 +5,17 @@
   
   tasks:
     - name: Get clone from public repository
+ 
       git:
-        repo: https://github.com/Naxalov/grocery_store
-        dest: /home/real/Desktop/grocery_store
+        repo: https://github.com/Naxalov/flask_echo
+        dest: /home/real/Desktop/flask_echo
         clone: yes
         update: yes
+
+    - name: Run bash script
+      shell: bash init.sh
+      async: 1000
+      poll: 0
+      # Change the working directory to the specified path
+      args:
+        chdir: /home/real/Desktop/flask_echo
